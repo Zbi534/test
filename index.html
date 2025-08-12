@@ -1,0 +1,43 @@
+<!doctype html>
+
+
+  
+  Redirect with fixed sub15 and random offer
+
+
+  <script>
+    // دالة توليد sub15 عشوائي
+    function generateSub15(length = 12) {
+      const chars = "abcdef0123456789";
+      let result = "";
+      for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return result;
+    }
+
+    // جلب sub15 من الجلسة أو توليد جديد
+    let sub15 = sessionStorage.getItem("sub15");
+    if (!sub15) {
+      sub15 = generateSub15();
+      sessionStorage.setItem("sub15", sub15);
+    }
+
+    // لائحة العروض (تقدر تزيد أو تبدل الروابط حسب الحاجة)
+    const offers = [
+      "https://fly.metozemoon.com/click?pid=2&offer_id=86&sub2=u724175&sub3=cl634627&sub7=rfhttps%3A%2F%2Frobuuxxv.vercel.app%2F&sub8=rdrobuuxxv.vercel.app&sub15=2cff0bf44cf3",
+      "https://fly.metozemoon.com/click?pid=2&offer_id=3706&sub2=u724175&sub3=cl634627&sub7=rfhttps%3A%2F%2Frobuuxxv.vercel.app%2F&sub8=rdrobuuxxv.vercel.app&sub15=5c3b3ac57404",
+      "https://fly.metozemoon.com/click?pid=2&offer_id=7&sub2=u724175&sub3=cl634627&sub7=rfhttps%3A%2F%2Frobuuxxv.vercel.app%2F&sub8=rdrobuuxxv.vercel.app&sub15=5c3b3ac57404"
+    ];
+
+    // اختيار عرض عشوائي
+    const randomOffer = offers[Math.floor(Math.random() * offers.length)];
+
+    // بناء الرابط النهائي مع sub15 ثابت
+    const finalURL = randomOffer + "&sub7=rfhttps%3A%2F%2Fwww.google.com%2F&sub8=rdgoogle.com&sub15=" + sub15;
+
+    // توجيه الزائر للرابط النهائي
+    window.location.href = finalURL;
+  </script>
+
+</!doctype>
