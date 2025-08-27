@@ -1,43 +1,23 @@
-<!doctype html>
-
-
-  
-  Redirect with fixed sub15 and random offer
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AppsLocked Redirect</title>
   <script>
-    // دالة توليد sub15 عشوائي
-    function generateSub15(length = 12) {
-      const chars = "abcdef0123456789";
-      let result = "";
-      for (let i = 0; i < length; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    }
-
-    // جلب sub15 من الجلسة أو توليد جديد
-    let sub15 = sessionStorage.getItem("sub15");
-    if (!sub15) {
-      sub15 = generateSub15();
-      sessionStorage.setItem("sub15", sub15);
-    }
-
-    // لائحة العروض (تقدر تزيد أو تبدل الروابط حسب الحاجة)
+    // اختيار رابط عشوائي من رابطين ثابتين
     const offers = [
-      "https://fly.metozemoon.com/click?pid=2&offer_id=86&sub2=u508537&sub3=cl676372&sub7=rfhttps%3A%2F%2Frobuxx1.vercel.app%2F&sub8=rdrobuxx1.vercel.app&sub15=c99dcf51dfc8",
-      "https://fly.metozemoon.com/click?pid=2&offer_id=410&sub2=u508537&sub3=cl676372&sub7=rfhttps%3A%2F%2Frobuxx1.vercel.app%2F&sub8=rdrobuxx1.vercel.app&sub15=c99dcf51dfc8",
-      "https://fly.metozemoon.com/click?pid=2&offer_id=9926&sub2=u508537&sub3=cl676372&sub7=rfhttps%3A%2F%2Frobuxx1.vercel.app%2F&sub8=rdrobuxx1.vercel.app&sub15=c99dcf51dfc8"
+      "https://appslocked.com/s?token=55b9054c0c0a3d5cbc3cab1194c67bf0&tracking_url=https%3A%2F%2Fping.rdrthtclk.com%2Faff_c%3Foffer_id%3D60488%26aff_id%3D413335%26aff_sub%3DContentLocker%26aff_sub2%3D4oqrd1%26aff_sub3%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJvZ2FkcyIsImF1ZCI6InBvc3RiYWNrIiwiaWF0IjoxNzU2MjUxNzgyLCJuYmYiOjE3NTYyNTE3ODIsImRhdGEiOnsiaXAiOiIxNjIuMjExLjEyMS42OSIsInVhIjoiTW96aWxsYS81LjAgKGlQaG9uZTsgQ1BVIGlQaG9uZSBPUyAxN182XzEgbGlrZSBNYWMgT1MgWCkgQXBwbGVXZWJLaXQvNjA1LjEuMTUgKEtIVE1MLCBsaWtlIEdlY2tvKSBWZXJzaW9uLzE3LjYuMSBNb2JpbGUvMjFHOTMgU2FmYXJpLzYwNC4xIiwicmVmIjpudWxsfX0.d-Ug8gQcymtPLTGej2fAoBuQVzCdZNNfAwbHTo6UT1ZGqN8Sg6fiv-s_XRmT9gscBH6Df-gwvPnpfm_o_82O4g%26aff_sub4%3D%26aff_sub5%3D",
+      "https://appslocked.com/s?token=2c5c945e52bc6558f82ffa533129a054&tracking_url=https%3A%2F%2Fping.rdrthtclk.com%2Faff_c%3Foffer_id%3D66859%26aff_id%3D413335%26aff_sub%3DContentLocker%26aff_sub2%3D4oqrd1%26aff_sub3%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJvZ2FkcyIsImF1ZCI6InBvc3RiYWNrIiwiaWF0IjoxNzU2MjUxODAwLCJuYmYiOjE3NTYyNTE4MDAsImRhdGEiOnsiaXAiOiIxNjIuMjExLjEyMS42OSIsInVhIjoiTW96aWxsYS81LjAgKGlQaG9uZTsgQ1BVIGlQaG9uZSBPUyAxN182XzEgbGlrZSBNYWMgT1MgWCkgQXBwbGVXZWJLaXQvNjA1LjEuMTUgKEtIVE1MLCBsaWtlIEdlY2tvKSBWZXJzaW9uLzE3LjYuMSBNb2JpbGUvMjFHOTMgU2FmYXJpLzYwNC4xIiwicmVmIjpudWxsfX0.Y-Pm-CiCby5aWIgsbuESenwvltBCp2R-njNfz1myVgQ-2jmDsz6PgyCLPEQRQr4X6E2mcJukoq-J3exUf5h2kA%26aff_sub4%3D%26aff_sub5%3D"
     ];
 
-    // اختيار عرض عشوائي
-    const randomOffer = offers[Math.floor(Math.random() * offers.length)];
+    // اختيار واحد عشوائي
+    const selected = offers[Math.floor(Math.random() * offers.length)];
 
-    // بناء الرابط النهائي مع sub15 ثابت
-    const finalURL = randomOffer + "&sub7=rfhttps%3A%2F%2Fwww.google.com%2F&sub8=rdgoogle.com&sub15=" + sub15;
-
-    // توجيه الزائر للرابط النهائي
-    window.location.href = finalURL;
+    // التوجيه التلقائي
+    window.location.href = selected;
   </script>
-
-</!doctype>
+</head>
+<body>
+  <p>جاري توجيهك إلى أحد العروض...</p>
+</body>
+</html>
